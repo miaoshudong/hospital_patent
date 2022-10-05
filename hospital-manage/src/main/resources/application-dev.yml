@@ -14,11 +14,11 @@ spring:
     #配置模板路径，默认是templates，可以不用配置
     prefix: classpath:/templates/
   redis:
-    host: 124.222.194.77
+    host: 
     port: 6379
     database: 0
     timeout: 1800000
-    password: sbkill1r.
+    password: 
     lettuce:
       pool:
         max-active: 20 #最大连接数
