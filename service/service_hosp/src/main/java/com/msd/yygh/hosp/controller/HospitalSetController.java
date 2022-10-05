@@ -74,8 +74,10 @@ public class HospitalSetController {
     public Result saveHospitalSet(@RequestBody HospitalSet hospitalSet) {
         //0 不能使用  1 能使用
         hospitalSet.setStatus(1);
+        String hoscode = hospitalSet.getHoscode();
         Random random = new Random();
-        hospitalSet.setSignKey(MD5.encrypt(System.currentTimeMillis() + "" + random.nextInt(1000)));
+//        hospitalSet.setSignKey(MD5.encrypt(System.currentTimeMillis() + "" + random.nextInt(1000)));
+        hospitalSet.setSignKey(MD5.encrypt(hoscode));
         boolean save = hospitalSetService.save(hospitalSet);
         if (save) {
             return Result.ok();
